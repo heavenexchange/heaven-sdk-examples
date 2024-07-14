@@ -24,7 +24,7 @@ import {
  TOKEN_PROGRAM_ID,
 } from "@solana/spl-token";
 
-async function createPool() {
+async function createPool(lp = 'lock') {
  console.log("Creating a new liquidity pool...");
  const creator = Keypair.generate();
  const connection = new Connection(
@@ -153,9 +153,9 @@ async function createPool() {
   // buyTax BPS = 25 / 10000 * 100 = 0.25%;
   buyTax: new BN(25),
   // locking liquidity
-  lp: "lock", // or 'burn' to burn LP tokens
-  // Lock liquidity for 60 seconds
-  lockLiquidityUntil: new Date(new Date().getTime() + 60 * 1000),
+  lp, // or 'burn' to burn LP tokens
+  // Lock liquidity for 5 seconds
+  lockLiquidityUntil: lp === 'lock' ? new Date(new Date().getTime() + 5 * 1000) : null,
   // Open pool 5 seconds after creation
   openPoolAt: new Date(new Date().getTime() + 5 * 1000),
   // [OPTIONAL]: The contract will emit this event when the pool is created
@@ -194,7 +194,12 @@ async function createPool() {
  console.log("Liquidity pool created successfully!", createPoolTx);
  console.log("Pool address:", pool.liquidityPoolState.toBase58());
 
- return { id: pool.liquidityPoolState, payer: creator, connection, network: "localnet" };
+ return {
+  id: pool.liquidityPoolState,
+  payer: creator,
+  connection,
+  network: "localnet",
+ };
 }
 
 export { createPool };

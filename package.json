@@ -6,7 +6,12 @@
  "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1",
   "test-create-pool": "node src/create-pool.mjs",
-  "test-swap-in": "node src/swapping-in.mjs"
+  "test-swap-in": "node src/swapping-in.mjs",
+  "test-swap-out": "node src/swapping-out.mjs",
+  "test-add-lp": "node src/add-lp.mjs",
+  "test-remove-lp": "node src/remove-lp.mjs",
+  "test-claim-tax": "node src/claim-tax.mjs",
+  "test-claim-lp": "node src/claim-lp.mjs"
  },
  "keywords": [],
  "author": "",
@@ -15,6 +20,6 @@
   "@solana/spl-token": "^0.4.8",
   "@solana/web3.js": "^1.95.0",
   "bn.js": "^5.2.1",
-  "heaven-sdk": "^0.0.22-rc.15"
+  "heaven-sdk": "^0.0.22-rc.17"
  }
 }
