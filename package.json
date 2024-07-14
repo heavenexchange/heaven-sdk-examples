@@ -1,0 +1,19 @@
+{
+ "name": "heaven-sdk-examples",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "test-create-pool": "node src/create-pool.mjs"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "@solana/spl-token": "^0.4.8",
+  "@solana/web3.js": "^1.95.0",
+  "bn.js": "^5.2.1",
+  "heaven-sdk": "^0.0.22-rc.15"
+ }
+}
