@@ -1,2 +1,6 @@
 node_modules
 .DS_Store
+chainlink.so
+metadata_program.so
+heaven.so
+test-ledger
