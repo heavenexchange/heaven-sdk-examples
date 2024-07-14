@@ -194,7 +194,7 @@ async function createPool() {
  console.log("Liquidity pool created successfully!", createPoolTx);
  console.log("Pool address:", pool.liquidityPoolState.toBase58());
 
- return pool.liquidityPoolState.toBase58();
+ return { id: pool.liquidityPoolState, payer: creator, connection, network: "localnet" };
 }
 
 export { createPool };
