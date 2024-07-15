@@ -22,6 +22,6 @@
   "@solana/spl-token": "^0.4.8",
   "@solana/web3.js": "^1.95.0",
   "bn.js": "^5.2.1",
-  "heaven-sdk": "^0.0.25"
+  "heaven-sdk": "^0.0.26"
  }
 }
